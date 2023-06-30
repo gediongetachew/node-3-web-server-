@@ -10,6 +10,8 @@ const viewPath = path.join(__dirname,'../templates/views')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 app.set('view engine', 'hbs')
 app.set('views',viewPath)
 hbs.registerPartials(paritalPath)
@@ -78,6 +80,6 @@ app.get('*',(req,res)=>{
         name: 'Gedion'
     })
 })
-app.listen(8080,()=>{
-    console.log('server is up on port 3000.')
+app.listen(port,()=>{
+    console.log('server is up on port.' + port)
 })
