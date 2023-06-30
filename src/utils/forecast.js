@@ -9,11 +9,7 @@ const forCast = ({latitude,longitude}, callback)=>{
         }else if (body.error){
             callback('unable to read loaction. try another search',undefined)
         } else {
-            callback(undefined,{
-                 weather_description,
-                curren_temperatue,
-                 feels_like
-            })
+            callback(undefined,body.daily[0].summary + 'Its currentyl' + body.current.temperature + 'degresout. but it feels like' + body.current.feels_like + '.' + body.current.precipProbability + '% change of rain.' +)
         }
     })
 
